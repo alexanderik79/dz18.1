@@ -1,8 +1,12 @@
 package org.example;
 
+import org.example.service.TablesCreator;
+import org.example.service.TablesFiller;
+
 public class Main {
     public static void main(String[] args) {
-        TablesCreator tablesCreator = new TablesCreator();
-        tablesCreator.createTables();
+        TablesCreator.createTables();
+        TablesFiller.fillTables();
+
     }
 }
