@@ -44,7 +44,6 @@ public class TablesCreator {
                     "quantity int NOT NULL," +
                     "FOREIGN KEY (order_num) REFERENCES orders (number))";
 
-
             Statement statement = connection.createStatement();
             statement.executeUpdate(createCustomerQuery);
             statement.executeUpdate(createCustomerDetailsQuery);
