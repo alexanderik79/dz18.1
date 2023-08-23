@@ -31,46 +31,39 @@ public class TablesFiller {
                     "(default, 'Eden', default, 'e@e.com', '+555555')";
 
             String createOrderQuery = "INSERT INTO orders " +
-                    "(id, number) VALUES " +
-                    "(default, default)," +
-                    "(default, default)," +
-                    "(default, default)," +
-                    "(default, default)," +
-                    "(default, default)," +
-                    "(default, default)," +
-                    "(default, default)," +
-                    "(default, default)," +
-                    "(default, default)," +
-                    "(default, default)," +
-                    "(default, default)," +
-                    "(default, default)," +
-                    "(default, default)";
+                    "(id, number, full_name) VALUES " +
+                    "(default, default, 'Alex First')," +
+                    "(default, default, 'Bill Second')," +
+                    "(default, default, 'Chris Third')," +
+                    "(default, default, 'Derik Fourth')," +
+                    "(default, default, 'Etan Fifth')";
+
 
             String createOrderDetailsQuery = "INSERT INTO order_details " +
                     "(id, client_id, client_name, date_time, order_num) VALUES " +
-                    "(default, 1, 'Alex First', NOW(), default)," +
-                    "(default, 2, 'Bill Second', NOW(), default)," +
-                    "(default, 2, 'Bill Second', NOW(), default)," +
-                    "(default, 3,'Chris Third', NOW(), default)," +
-                    "(default, 3,'Chris Third', NOW(), default)," +
-                    "(default, 3,'Chris Third', NOW(), default)," +
-                    "(default, 4,'Derik Fourth', NOW(), default)," +
-                    "(default, 4,'Derik Fourth', NOW(), default)," +
-                    "(default, 4,'Derik Fourth', NOW(), default)," +
-                    "(default, 4,'Derik Fourth', NOW(), default)";
+                    "(default, 1, 'Alex First', NOW(), 1)," +
+                    "(default, 2, 'Bill Second', NOW(), 2)," +
+                    "(default, 2, 'Bill Second', NOW(), 2)," +
+                    "(default, 3,'Chris Third', NOW(), 3)," +
+                    "(default, 3,'Chris Third', NOW(), 3)," +
+                    "(default, 3,'Chris Third', NOW(), 3)," +
+                    "(default, 4,'Derik Fourth', NOW(), 4)," +
+                    "(default, 4,'Derik Fourth', NOW(), 4)," +
+                    "(default, 4,'Derik Fourth', NOW(), 4)," +
+                    "(default, 4,'Derik Fourth', NOW(), 4)";
 
             String createCartQuery = "INSERT INTO cart " +
                     "(id, order_num, price, product, quantity) VALUES " +
-                    "(default, default, 100.05, 'vodka', 1)," +
-                    "(default, default, 200.20, 'martini', 1)," +
-                    "(default, default, 333.33, 'beer', 8)," +
-                    "(default, default, 444.44, 'water', 40)," +
-                    "(default, default, 400.40, 'juice', 5)," +
-                    "(default, default, 500.00, 'wine', 1)," +
-                    "(default, default, 125.90, 'kovbasa', 1)," +
-                    "(default, default, 210.00, 'jin', 1)," +
-                    "(default, default, 600.00, 'salo', 3)," +
-                    "(default, default, 1000.00, 'fish', 5)";
+                    "(default, 1, 100.05, 'vodka', 1)," +
+                    "(default, 2, 200.20, 'martini', 1)," +
+                    "(default, 2, 333.33, 'beer', 8)," +
+                    "(default, 3, 444.44, 'water', 40)," +
+                    "(default, 3, 400.40, 'juice', 5)," +
+                    "(default, 3, 500.00, 'wine', 1)," +
+                    "(default, 4, 125.90, 'kovbasa', 1)," +
+                    "(default, 4, 210.00, 'jin', 1)," +
+                    "(default, 4, 600.00, 'salo', 3)," +
+                    "(default, 4, 1000.00, 'fish', 5)";
 
 
             Statement statement = connection.createStatement();

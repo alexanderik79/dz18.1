@@ -26,7 +26,8 @@ public class TablesCreator {
 
             String createOrderQuery = "CREATE TABLE IF NOT EXISTS orders (" +
                     "id SERIAL PRIMARY KEY," +
-                    "number SERIAL)";
+                    "number SERIAL," +
+                    "full_name VARCHAR(255) NOT NULL)";
 
             String createOrderDetailsQuery = "CREATE TABLE IF NOT EXISTS order_details (" +
                     "id SERIAL PRIMARY KEY," +
@@ -38,7 +39,7 @@ public class TablesCreator {
 
             String createCartQuery = "CREATE TABLE IF NOT EXISTS cart (" +
                     "id SERIAL PRIMARY KEY," +
-                    "order_num SERIAL," +
+                    "order_num int," +
                     "product VARCHAR(255) NOT NULL," +
                     "price NUMERIC(10, 2) NOT NULL," +
                     "quantity int NOT NULL," +
