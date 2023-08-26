@@ -8,7 +8,11 @@ import org.example.service.TablesFiller;
 public class Main {
     public static void main(String[] args) {
         TablesCreator.createTables();
-        TablesFiller.fillTables();
-        Selector.select();
+        TablesFiller.fillTableCustomer();
+        TablesFiller.fillTableCustomerDetails();
+        TablesFiller.fillTableOrders();
+        TablesFiller.fillTableOrderDetails();
+        TablesFiller.fillTableCart();
+//        Selector.select();
     }
 }

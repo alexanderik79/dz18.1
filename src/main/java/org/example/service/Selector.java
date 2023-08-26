@@ -4,20 +4,17 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
-import java.util.ArrayList;
-import java.util.List;
+
+import static org.example.service.Properties.*;
+
 
 public class Selector {
     public static void select()
     {
-        String jdbcUrl = "jdbc:postgresql://localhost:5432/dz18";
-        String username = "postgres";
-        String password = "Mettalica07";
-
         try {
             Connection connection = DriverManager.getConnection(jdbcUrl, username, password);
 
-            String sqlQuery1 = "SELECT * FROM \"public\".orders WHERE full_name = 'Chris Third'";
+            String sqlQuery1 = "SELECT * FROM \"public\".orders WHERE client_id = 3";
             String sqlQuery2 = "SELECT * FROM \"public\".order_details WHERE client_name = 'Chris Third'";
             String sqlQuery3 = "SELECT * FROM \"public\".order_details";
             String sqlQuery4 = "SELECT client_name, count(*) \n" +
@@ -31,8 +28,8 @@ public class Selector {
             while(resultSet1.next()){
                 int id = resultSet1.getInt("id");
                 int number = resultSet1.getInt("number");
-                String name = resultSet1.getString("full_name");
-                System.out.println(id+"|"+number+"|"+name);
+                int clientId = resultSet1.getInt("client_id");
+                System.out.println(id+"|"+number+"|"+clientId);
             }
             resultSet1.close();
             statement.close();
@@ -92,7 +89,6 @@ public class Selector {
             System.out.println("Cart erased");
             statement6.close();
             System.out.println("_________________________________________________________");
-
 
             connection.close();
 

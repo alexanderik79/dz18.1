@@ -13,16 +13,15 @@
   </component>
   <component name="DBNavigator.Project.DatabaseConsoleManager">
     <connection id="0f6881a3-c719-4e1b-a900-52426c75fd99">
-      <console name="Connection" type="STANDARD" schema="dz18" session="Main"><![CDATA[SELECT * FROM "public".orders WHERE full_name = 'Chris Third';
-SELECT * FROM "public".order_details WHERE client_name = 'Chris Third';
-SELECT * FROM "public".order_details;
-SELECT client_name, count(*) 
-AS orders_count FROM "public".order_details GROUP BY client_name;
-UPDATE "public".cart SET product = 'salo' WHERE product = 'super salo';
---TRUNCATE "public".cart;]]></console>
+      <console name="Connection" type="STANDARD" schema="dz18" session="Main"><![CDATA[select full_name, email, tel_num, city, number, date_time, product, quantity, price from "public".customer c, "public".customer_details cd, "public".orders o, 
+"public".order_details od, "public".cart ca
+where c.id = cd.client_id and c.id = o.client_id and o.id = od.order_num and od.id = ca.order_num;
+
+select * from "public".order_details od, "public".cart ca 
+where od.id = ca.order_num;]]></console>
     </connection>
     <connection id="4b989d0e-ad54-4096-9f3d-3de6c391e558">
-      <console name="Connection 1" type="STANDARD" schema="postgres" session="Main" />
+      <console name="Connection 1" type="STANDARD" schema="postgres" session="Main"><![CDATA[DROP TABLE cart CASCADE;]]></console>
     </connection>
   </component>
   <component name="DBNavigator.Project.DatabaseEditorStateManager">
@@ -33,6 +32,7 @@ UPDATE "public".cart SET product = 'salo' WHERE product = 'super salo';
   </component>
   <component name="DBNavigator.Project.DatasetFilterManager">
     <filter-actions connection-id="0f6881a3-c719-4e1b-a900-52426c75fd99" dataset="public.cart" active-filter-id="" />
+    <filter-actions connection-id="0f6881a3-c719-4e1b-a900-52426c75fd99" dataset="public.customer" active-filter-id="" />
     <filter-actions connection-id="0f6881a3-c719-4e1b-a900-52426c75fd99" dataset="public.customer_details" active-filter-id="" />
     <filter-actions connection-id="0f6881a3-c719-4e1b-a900-52426c75fd99" dataset="public.order_details" active-filter-id="" />
   </component>

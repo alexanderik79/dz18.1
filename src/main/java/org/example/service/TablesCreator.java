@@ -3,11 +3,11 @@ package org.example.service;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.Statement;
+
+import static org.example.service.Properties.*;
+
 public class TablesCreator {
     public static void createTables() {
-        String jdbcUrl = "jdbc:postgresql://localhost:5432/dz18";
-        String username = "postgres";
-        String password = "Mettalica07";
 
         try {
             Connection connection = DriverManager.getConnection(jdbcUrl, username, password);
@@ -20,20 +20,20 @@ public class TablesCreator {
                     "id SERIAL PRIMARY KEY," +
                     "client_id SERIAL," +
                     "email VARCHAR(255) NOT NULL," +
-                    "tel_number VARCHAR(255) NOT NULL," +
+                    "tel_num VARCHAR(255) NOT NULL," +
                     "city VARCHAR(255)," +
                     "FOREIGN KEY (client_id) REFERENCES customer (id))";
 
             String createOrderQuery = "CREATE TABLE IF NOT EXISTS orders (" +
                     "id SERIAL PRIMARY KEY," +
-                    "number SERIAL," +
-                    "full_name VARCHAR(255) NOT NULL)";
+                    "number VARCHAR(255) NOT NULL," +
+                    "client_id SERIAL," +
+                    "FOREIGN KEY (client_id) REFERENCES customer (id))";
 
             String createOrderDetailsQuery = "CREATE TABLE IF NOT EXISTS order_details (" +
                     "id SERIAL PRIMARY KEY," +
                     "order_num SERIAL," +
                     "client_id int NOT NULL," +
-                    "client_name VARCHAR(255) NOT NULL," +
                     "date_time TIMESTAMP NOT NULL," +
                     "FOREIGN KEY (order_num) REFERENCES orders (id))";
 
