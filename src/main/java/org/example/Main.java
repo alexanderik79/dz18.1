@@ -13,6 +13,6 @@ public class Main {
         TablesFiller.fillTableOrders();
         TablesFiller.fillTableOrderDetails();
         TablesFiller.fillTableCart();
-//        Selector.select();
+        Selector.select();
     }
 }

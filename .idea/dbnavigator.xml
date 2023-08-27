@@ -13,7 +13,7 @@
   </component>
   <component name="DBNavigator.Project.DatabaseConsoleManager">
     <connection id="0f6881a3-c719-4e1b-a900-52426c75fd99">
-      <console name="Connection" type="STANDARD" schema="dz18" session="Main"><![CDATA[select full_name, email, tel_num, city, number, date_time, product, quantity, price from "public".customer c, "public".customer_details cd, "public".orders o, 
+      <console name="Connection" type="STANDARD" schema="dz18" session="Main"><![CDATA[select full_name, email, tel_num, city, number, date_time, product, quantity, price AS data from "public".customer c, "public".customer_details cd, "public".orders o, 
 "public".order_details od, "public".cart ca
 where c.id = cd.client_id and c.id = o.client_id and o.id = od.order_num and od.id = ca.order_num;
 

@@ -2,11 +2,13 @@ package org.example.shopEntity;
 
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 
 import javax.persistence.*;
 
 @Getter
 @Setter
+@ToString
 public class Orders {
     private int id;
     private String number;
