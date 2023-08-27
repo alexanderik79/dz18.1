@@ -2,7 +2,6 @@ package org.example.service;
 
 import org.example.shopEntity.*;
 
-import javax.persistence.criteria.Order;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -21,7 +20,7 @@ public class TablesFiller {
         customerList.add(new Customer("Alex First"));
         customerList.add(new Customer("Bill Second"));
         customerList.add(new Customer("Chris Third"));
-        customerList.add(new Customer("Derik Fourth"));
+        customerList.add(new Customer("Drew Fourth"));
         customerList.add(new Customer("Etan Fifth"));
 
         try {
@@ -50,10 +49,10 @@ public class TablesFiller {
     }
 
     public static void fillTableCustomerDetails() {
-        customerDetailsList.add(new CustomerDetails("Antwerp", "a@a.com", "+11111"));
+        customerDetailsList.add(new CustomerDetails("Alania", "a@a.com", "+11111"));
         customerDetailsList.add(new CustomerDetails("Bombey", "b@b.com", "+22222"));
         customerDetailsList.add(new CustomerDetails("Cairo", "c@c.com", "+33333"));
-        customerDetailsList.add(new CustomerDetails("Dunkirk", "d@d.comh", "+44444"));
+        customerDetailsList.add(new CustomerDetails("Dublin", "d@d.com", "+44444"));
         customerDetailsList.add(new CustomerDetails("Eden", "E@e.com", "+55555"));
 
         try {
@@ -169,28 +168,28 @@ public class TablesFiller {
 
 
     public static void fillTableCart() {
-        cartList.add(new Cart(1, 2,100, "sugar"));
-        cartList.add(new Cart(2, 3,22, "eggs"));
-        cartList.add(new Cart(3, 5,200, "beer"));
-        cartList.add(new Cart(4, 1,300, "vodka"));
-        cartList.add(new Cart(5, 8,33, "salt"));
-        cartList.add(new Cart(6, 3,133, "water"));
-        cartList.add(new Cart(7, 1,214, "wine"));
-        cartList.add(new Cart(8, 3,114, "pc"));
-        cartList.add(new Cart(9, 7,14, "carpet"));
-        cartList.add(new Cart(10, 5,200, "beer"));
-        cartList.add(new Cart(12, 1,300, "vodka"));
-        cartList.add(new Cart(13, 8,33, "salt"));
-        cartList.add(new Cart(14, 3,133, "water"));
-        cartList.add(new Cart(15, 1,214, "wine"));
-        cartList.add(new Cart(1, 3,114, "pc"));
-        cartList.add(new Cart(2, 7,14, "carpet"));
-        cartList.add(new Cart(10,5,334, "socks"));
-        cartList.add(new Cart(11,1,25, "nails"));
-        cartList.add(new Cart(12,2,55, "bolts"));
-        cartList.add(new Cart(13,9,59, "gas"));
-        cartList.add(new Cart(14,1,57, "wood"));
-        cartList.add(new Cart(15,3,333, "shit"));
+        cartList.add(new Cart(1, 2,100.22, "sugar"));
+        cartList.add(new Cart(2, 3,22.25, "eggs"));
+        cartList.add(new Cart(3, 5,200.80, "beer"));
+        cartList.add(new Cart(4, 1,300.30, "vodka"));
+        cartList.add(new Cart(5, 8,33.01, "salt"));
+        cartList.add(new Cart(6, 3,133.99, "water"));
+        cartList.add(new Cart(7, 1,214.20, "wine"));
+        cartList.add(new Cart(8, 3,114.10, "pc"));
+        cartList.add(new Cart(9, 7,14.29, "carpet"));
+        cartList.add(new Cart(10, 5,200.80, "beer"));
+        cartList.add(new Cart(12, 1,300.30, "vodka"));
+        cartList.add(new Cart(13, 8,33.01, "salt"));
+        cartList.add(new Cart(14, 3,133.99, "water"));
+        cartList.add(new Cart(15, 1,214.20, "wine"));
+        cartList.add(new Cart(1, 3,114.10, "pc"));
+        cartList.add(new Cart(2, 7,14.29, "carpet"));
+        cartList.add(new Cart(10,5,334.11, "socks"));
+        cartList.add(new Cart(11,1,25.25, "nails"));
+        cartList.add(new Cart(12,2,55.90, "bolts"));
+        cartList.add(new Cart(13,9,59.99, "gas"));
+        cartList.add(new Cart(14,1,57.01, "wood"));
+        cartList.add(new Cart(15,3,333.33, "shit"));
 
         try {
             Connection connection = DriverManager.getConnection(jdbcUrl, username, password);

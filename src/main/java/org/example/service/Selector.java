@@ -109,9 +109,9 @@ public class Selector {
                 String date_time = resultSet7.getString("date_time");
                 String product = resultSet7.getString("product");
                 int quantity = resultSet7.getInt("quantity");
-                int price = resultSet7.getInt("price");
-                System.out.println(full_name+"|"+email+"|"+tel_num+"|"+city+"|"+number+"|"+date_time
-                        +"|"+product+"|"+quantity+"|"+price);
+                double price = resultSet7.getDouble("price");
+                System.out.println(full_name+"\t|"+email+" |"+tel_num+" |"+city+"  \t| "+number+" \t|"+date_time
+                        +"\t|"+product+"\t|"+quantity+"\t|"+price);
             }
             resultSet7.close();
             statement7.close();
